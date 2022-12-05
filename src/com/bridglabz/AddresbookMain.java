@@ -4,20 +4,23 @@ import java.util.Scanner;
 
 public class AddresbookMain {
     public static void main(String[] args) {
-        System.out.println("Welcome To Addresbook Program");
+        AddressbookSystem addressBook = new AddressbookSystem();
         System.out.println("WelCome To AddressBook Program");
-        Scanner sc = new Scanner (System.in);
-        System.out.println("Enter the first name");
-        String  fName = sc.next();
-        System.out.println("Enter the last Name");
-        String lName = sc.next();
-        System.out.println("Enter the city");
-        String City = sc.next();
-        System.out.println("Enter the Address");
-        String Address = sc.next();
-        System.out.println("Enter the number");
-        int Number = sc.nextInt();
-        System.out.println("Enter the mail");
-        String Email = sc.next();
+        Scanner scanner = new Scanner(System.in);
+        int opration;
+        do {
+            System.out.println("1. ADD CONTACT \n2. DISPLAY CONTACT \n3. EXIT ");
+            System.out.println("Enter the Operation Number");
+            opration = scanner.nextInt();
+            switch (opration) {
+                case 1:
+                    addressBook.addContact();
+                    break;
+                case 2:
+                    addressBook.displayContacts();
+                default:
+                    System.out.println("Enter The Wrong Opration Number");
+            }
+        } while (opration != 3);
     }
 }
