@@ -96,4 +96,19 @@ public class AddressbookSystem {
             System.out.println("Contact is not Available \nTry again");
         }
     }
+    public void deleteContact(){
+        System.out.println("Enter First Name Which You Have To Delete");
+        String firstName=sc.next();
+        boolean isAvailable=true;
+        for (int i=0;i<contactsArrayList.size();i++){
+            if (contactsArrayList.get(i).getFirstName().equals(firstName)){
+                contactsArrayList.remove(i);
+                System.out.println("Contact Deleted Successfully...!");
+                break;
+            }
+            else{
+                System.out.println("Contact is not Available \nTry again");
+            }
+        }
+    }
 }
